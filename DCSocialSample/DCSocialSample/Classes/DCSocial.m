@@ -1,9 +1,8 @@
 //
 //  DCSocial.m
-//  DCSocialSample
 //
-//  Created by 廣川政樹 on 2013/06/28.
-//  Copyright (c) 2013年 Dolice. All rights reserved.
+//  Created by Masaki Hirokawa on 2013/06/28.
+//  Copyright (c) 2013 Masaki Hirokawa. All rights reserved.
 //
 
 #import "DCSocial.h"
@@ -37,6 +36,19 @@
     [pasteboard setData:UIImagePNGRepresentation([UIImage imageNamed:imageName]) forPasteboardType:@"public.png"];
     NSString *LineUrlString = [NSString stringWithFormat:@"line://msg/image/%@", pasteboard.name];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:LineUrlString]];
+}
+
+//シェアする
++ (void)socialShare:(id)delegate shareText:(NSString *)shareText shareImage:(UIImage *)shareImage
+{
+    if([UIActivityViewController class]) {
+        NSString *textToShare = shareText;
+        UIImage *imageToShare = shareImage;
+        NSArray *itemsToShare = [[NSArray alloc] initWithObjects:textToShare, imageToShare, nil];
+        UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:itemsToShare applicationActivities:nil];
+        activityVC.excludedActivityTypes = [[NSArray alloc] initWithObjects: UIActivityTypePrint, UIActivityTypeCopyToPasteboard, UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll, UIActivityTypeMessage, UIActivityTypePostToWeibo, nil];
+        [delegate presentViewController:activityVC animated:YES completion:nil];
+    }
 }
 
 @end
