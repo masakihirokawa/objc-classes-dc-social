@@ -10,7 +10,7 @@
 
 @interface DCSocial : NSObject
 
-#pragma mark method prototype
+#pragma mark - public method
 + (void)postToFacebook:(id)delegate text:(NSString *)text imageName:(NSString *)imageName url:(NSString *)url;
 + (void)postToTwitter:(id)delegate text:(NSString *)text imageName:(NSString *)imageName url:(NSString *)url;
 + (void)postToLine:(NSString *)imageName;

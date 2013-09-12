@@ -9,7 +9,7 @@
 
 @implementation DCSocial
 
-//Facebookへ投稿
+// Facebookへ投稿
 + (void)postToFacebook:(id)delegate text:(NSString *)text imageName:(NSString *)imageName url:(NSString *)url
 {
     SLComposeViewController *slc = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
@@ -19,7 +19,7 @@
     [delegate presentViewController:slc animated:YES completion:nil];
 }
 
-//Twitterへ投稿
+// Twitterへ投稿
 + (void)postToTwitter:(id)delegate text:(NSString *)text imageName:(NSString *)imageName url:(NSString *)url
 {
     SLComposeViewController *slc = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
@@ -29,7 +29,7 @@
     [delegate presentViewController:slc animated:YES completion:nil];
 }
 
-//LINEへ投稿
+// LINEへ投稿
 + (void)postToLine:(NSString *)imageName
 {
     UIPasteboard *pasteboard = [UIPasteboard pasteboardWithUniqueName];
@@ -38,7 +38,7 @@
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:LineUrlString]];
 }
 
-//シェアする
+// シェアする
 + (void)socialShare:(id)delegate shareText:(NSString *)shareText shareImage:(UIImage *)shareImage
 {
     if([UIActivityViewController class]) {
