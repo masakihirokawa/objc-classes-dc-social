@@ -9,6 +9,11 @@
 
 @implementation DCSocial
 
+typedef NS_ENUM(NSUInteger, imageExtId) {
+    JPEG = 0,
+    PNG  = 1
+};
+
 // Facebookへ投稿
 + (void)postToFacebook:(id)delegate text:(NSString *)text imageName:(NSString *)imageName url:(NSString *)url
 {
@@ -29,13 +34,32 @@
     [delegate presentViewController:slc animated:YES completion:nil];
 }
 
-// LINEへ投稿
-+ (void)postToLine:(NSString *)imageName
+// LINEへイメージ投稿
++ (void)postImageToLine:(NSString *)imageName imageType:(NSUInteger)imageType
 {
-    UIPasteboard *pasteboard = [UIPasteboard pasteboardWithUniqueName];
-    [pasteboard setData:UIImagePNGRepresentation([UIImage imageNamed:imageName]) forPasteboardType:@"public.png"];
+    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+    if (imageType == JPEG) {
+        [pasteboard setData:UIImageJPEGRepresentation([UIImage imageNamed:imageName], 1) forPasteboardType:@"public.jpeg"];
+    } else if (imageType == PNG) {
+        [pasteboard setData:UIImagePNGRepresentation([UIImage imageNamed:imageName]) forPasteboardType:@"public.png"];
+    }
     NSString *LineUrlString = [NSString stringWithFormat:@"line://msg/image/%@", pasteboard.name];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:LineUrlString]];
+}
+
+// LINEへテキスト投稿
++ (void)postTextToLine:(NSString *)text
+{
+    NSString *plainString = text;
+    NSString *contentKey = (__bridge NSString *)CFURLCreateStringByAddingPercentEscapes(NULL,
+                                                                                        (CFStringRef)plainString,
+                                                                                        NULL,
+                                                                                        (CFStringRef)@"!*'();:@&=+$,/?%#[]",
+                                                                                        kCFStringEncodingUTF8 );
+    NSString *contentType = @"text";
+    NSString *urlString = [NSString stringWithFormat: @"http://line.naver.jp/R/msg/%@/?%@", contentType, contentKey];
+    NSURL *url = [NSURL URLWithString:urlString];
+    [[UIApplication sharedApplication] openURL:url];
 }
 
 // シェアする

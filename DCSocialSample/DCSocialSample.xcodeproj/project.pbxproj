@@ -20,7 +20,7 @@
 		60F8A58C177DA7B500C261E8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F8A58B177DA7B500C261E8 /* ViewController.m */; };
 		60F8A598177DA80B00C261E8 /* DCSocial.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F8A597177DA80B00C261E8 /* DCSocial.m */; };
 		60F8A59A177DA82D00C261E8 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60F8A599177DA82D00C261E8 /* Social.framework */; };
-		60F8A59E177DA92500C261E8 /* Pandora_640_1136.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 60F8A59D177DA92500C261E8 /* Pandora_640_1136.jpg */; };
+		C2732102187E5944006E5AE8 /* Pandora_744_1392.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C2732101187E5944006E5AE8 /* Pandora_744_1392.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,7 +43,7 @@
 		60F8A596177DA80B00C261E8 /* DCSocial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCSocial.h; sourceTree = "<group>"; };
 		60F8A597177DA80B00C261E8 /* DCSocial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCSocial.m; sourceTree = "<group>"; };
 		60F8A599177DA82D00C261E8 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
-		60F8A59D177DA92500C261E8 /* Pandora_640_1136.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Pandora_640_1136.jpg; sourceTree = "<group>"; };
+		C2732101187E5944006E5AE8 /* Pandora_744_1392.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Pandora_744_1392.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,10 +95,10 @@
 				60F8A595177DA80B00C261E8 /* Classes */,
 				60F8A57E177DA7B500C261E8 /* AppDelegate.h */,
 				60F8A57F177DA7B500C261E8 /* AppDelegate.m */,
-				60F8A587177DA7B500C261E8 /* MainStoryboard.storyboard */,
 				60F8A58A177DA7B500C261E8 /* ViewController.h */,
 				60F8A58B177DA7B500C261E8 /* ViewController.m */,
-				60F8A59B177DA92500C261E8 /* Resources */,
+				60F8A587177DA7B500C261E8 /* MainStoryboard.storyboard */,
+				C27320FF187E5944006E5AE8 /* Resources */,
 				60F8A576177DA7B500C261E8 /* Supporting Files */,
 			);
 			path = DCSocialSample;
@@ -127,19 +127,18 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		60F8A59B177DA92500C261E8 /* Resources */ = {
+		C27320FF187E5944006E5AE8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				60F8A59C177DA92500C261E8 /* images */,
+				C2732100187E5944006E5AE8 /* images */,
 			);
-			name = Resources;
-			path = "../../../objc-share-to-social/ShareToSocialSample/ShareToSocialSample/Resources";
+			path = Resources;
 			sourceTree = "<group>";
 		};
-		60F8A59C177DA92500C261E8 /* images */ = {
+		C2732100187E5944006E5AE8 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				60F8A59D177DA92500C261E8 /* Pandora_640_1136.jpg */,
+				C2732101187E5944006E5AE8 /* Pandora_744_1392.jpg */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -199,8 +198,8 @@
 				60F8A582177DA7B500C261E8 /* Default.png in Resources */,
 				60F8A584177DA7B500C261E8 /* Default@2x.png in Resources */,
 				60F8A586177DA7B500C261E8 /* Default-568h@2x.png in Resources */,
+				C2732102187E5944006E5AE8 /* Pandora_744_1392.jpg in Resources */,
 				60F8A589177DA7B500C261E8 /* MainStoryboard.storyboard in Resources */,
-				60F8A59E177DA92500C261E8 /* Pandora_640_1136.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +336,7 @@
 				60F8A591177DA7B500C261E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

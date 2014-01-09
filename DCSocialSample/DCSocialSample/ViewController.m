@@ -14,30 +14,43 @@
 
 @implementation ViewController
 
+typedef NS_ENUM(NSUInteger, imageExtId) {
+    JPEG = 0,
+    PNG  = 1
+};
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 }
 
+// Facebookへ投稿
 - (IBAction)postToFacebook:(id)sender
 {
-    [DCSocial postToFacebook:self
-                        text:POST_TEXT
-                   imageName:POST_IMG_NAME
-                         url:POST_URL];
+    [DCSocial postToFacebook:self text:POST_TEXT imageName:POST_IMG_NAME url:POST_URL];
 }
 
+// Twitterへ投稿
 - (IBAction)postToTwitter:(id)sender
 {
-    [DCSocial postToTwitter:self
-                       text:POST_TEXT
-                  imageName:POST_IMG_NAME
-                        url:POST_URL];
+    [DCSocial postToTwitter:self text:POST_TEXT imageName:POST_IMG_NAME url:POST_URL];
 }
 
-- (IBAction)postToLine:(id)sender
+// LINEへ JPEG画像投稿
+- (IBAction)postImageToLine:(id)sender
 {
-    [DCSocial postToLine:POST_IMG_NAME];
+    [DCSocial postImageToLine:POST_IMG_NAME imageType:JPEG];
+}
+
+// LINEへテキスト投稿
+- (IBAction)postTextToLine:(id)sender
+{
+    [DCSocial postTextToLine:POST_TEXT];
+}
+
+- (IBAction)share:(id)sender
+{
+    [DCSocial socialShare:self shareText:POST_TEXT shareImage:[UIImage imageNamed:POST_IMG_NAME]];
 }
 
 @end
