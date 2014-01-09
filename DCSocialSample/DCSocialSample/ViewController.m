@@ -48,6 +48,7 @@ typedef NS_ENUM(NSUInteger, imageExtId) {
     [DCSocial postTextToLine:POST_TEXT];
 }
 
+// メール/Twitter/Facebook共有
 - (IBAction)share:(id)sender
 {
     [DCSocial socialShare:self shareText:POST_TEXT shareImage:[UIImage imageNamed:POST_IMG_NAME]];

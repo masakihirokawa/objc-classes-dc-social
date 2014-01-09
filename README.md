@@ -5,6 +5,14 @@ Facebook/Twitter/LINEへの画像/テキスト/URLの投稿をシンプルな記
 
 このクラスを使用する際は「Social」フレームワークが必要になります。
 
+##主な機能
+
+1. Facebookへの画像/テキスト/URLの投稿
+2. Twitterへの画像/テキスト/URLの投稿
+3. LINEへの画像投稿
+4. LINEへテキスト投稿
+5. メール/Twitter/Facebookに共有
+
 ##使用方法
 
 ###Facebookへの画像/テキスト/URLの投稿
@@ -39,6 +47,12 @@ typedef NS_ENUM(NSUInteger, imageExtId) {
 };
 
 [DCSocial postImageToLine:POST_IMG_NAME imageType:PNG];
+```
+
+###LINEへテキスト投稿
+
+```objective-c
+[DCSocial postTextToLine:POST_TEXT];
 ```
 
 ###メール/Twitter/Facebook共有
