@@ -9,4 +9,5 @@ Pod::Spec.new do |spec|
   spec.requires_arc = true
   spec.source = { :git => "https://github.com/masakihirokawa/objc-classes-dc-social.git", :tag => spec.version.to_s }
   spec.ios.deployment_target = '7.0'
+  spec.framework  = 'Social'
 end
