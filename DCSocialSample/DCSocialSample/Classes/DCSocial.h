@@ -10,6 +10,12 @@
 
 @interface DCSocial : NSObject
 
+#pragma mark - enumerator
+typedef NS_ENUM(NSUInteger, imageExtId) {
+    IMG_EXT_JPEG = 0,
+    IMG_EXT_PNG  = 1
+};
+
 #pragma mark - public method
 + (void)postToFacebook:(id)delegate text:(NSString *)text imageName:(NSString *)imageName url:(NSString *)url;
 + (void)postToTwitter:(id)delegate text:(NSString *)text imageName:(NSString *)imageName url:(NSString *)url;
